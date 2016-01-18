@@ -1,0 +1,54 @@
+<%= content_for :title, "Groups" %>
+
+<% content_for :header_content do %>
+<h1><strong>Grupos</strong></h1>
+<% end %>
+
+<%= link_to main_app.new_group_path, class: 'c4-button-success' do %>
+  Agregar nuevo
+<% end %>
+<div class="c4-list-collection">
+  <% if @groups.empty? %>
+    <div class="no-content">
+      <span class="icon-error"></span>
+      <div>Sin contenido</div>
+    </div>
+  <% end %>
+  <% @groups.each do |group| %>
+  <div class="c4-list-cell">
+    <div class="row top-row">
+      <div class="nine columns">
+        <div class="title">
+          <%= group.name %>
+        </div>
+      </div>
+      <div class="three columns">
+        <div class="date">
+          <%= group.created_at.strftime('%d/%m/%Y') %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!--
+      <div class="four columns">
+        <div class="thumbnail" style="background-image: url(<%#= photo_if_exists(group) %>)"></div>
+      </div>
+      -->
+      <div class="twelve columns">
+        <div class="description code">
+          Código: <%= group.code %>
+        </div>
+        <div class="row buttons-container">
+        <%= link_to main_app.edit_group_path(group), class:'c4-button-primary' do %>
+          <span class="icon-edit"></span>
+        <% end %>
+          <%= link_to main_app.group_path(group), method: :delete, data: { confirm: 'Esta acción no puede deshacerse. ¿Está seguro que desea borrar este elemento?'}, class:'c4-button-warning' do %>
+            <span class="icon-delete"></span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+

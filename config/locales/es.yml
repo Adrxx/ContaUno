@@ -1,0 +1,85 @@
+es:
+  mail_form:
+    attributes:
+      contact:
+        name: "Nombre"
+        email: "E-mail"
+        subject: "Asunto"
+        message: "Mensaje"
+      dealer_contact:
+        name: "Nombre"
+        email: "E-mail"
+        address: "Dirección"
+        telephone: "Teléfono"
+        telephone2: "Teléfono secundario"
+    errors:
+      models:
+        homework_upload:
+          attributes:
+            name:
+              blank: "Por favor proporcione su nombre."
+            email:
+              blank: "Por favor proporcione un correo electrónico."
+              invalid: "El correo electrónico no es válido."
+            message:
+              blank: "El mensaje no puede estar vacío."
+        dealer_contact:
+          attributes:
+            name:
+              blank: "Por favor proporcione su nombre."
+            email:
+              blank: "Por favor proporcione un correo electrónico."
+              invalid: "El correo electrónico no es válido."
+            telephone:
+              blank: "Por favor proporcione un teléfono."
+  devise:
+    sessions:
+      user:
+        signed_in: "¡Bienvenido!"
+        signed_out: "Hasta luego."
+    failure:
+      user:
+        invalid: "El usuario o la contraseña son incorrectos." 
+        not_found_in_database: "El usuario o la contraseña son incorrectos." 
+        unauthenticated: "Por favor inicie sesión."
+        already_signed_out: "Sesión ya terminada"
+      already_authenticated: "Sesión ya iniciada."
+  activerecord:
+    errors:
+      messages:
+        blank: "Este campo es necesario."
+        too_long: "El campo es demasiado largo."
+        not_a_number: "Este campo debe ser un número."
+      models:
+        homework_upload:
+          attributes:
+            password_confirmation:
+              confirmation: "Las contraseñas no coinciden."
+            password:
+              too_long: "La contraseña no puede ser más larga que 30 caractéres."
+              too_short: "La contraseña debe contener mínimo 6 caractéres."
+            email:
+              invalid: "La dirección de correo electrónico no es válida."
+              taken: "Este correo ya está registrado en otra cuenta."
+            name:
+              blank: "Por favor proporcione su nombre."
+            homework:
+              blank: "Por favor selecione el archivo de tarea a subir."
+            homework_file_name:
+              invalid: "El archivo no es del formato esperado."
+        dealer:
+          attributes:
+            telephone2:
+              invalid: "Este campo debe ser un número telefónico."
+            telephone:
+              invalid: "Este campo debe ser un número telefónico."
+            email:
+              invalid: "Este campo debe ser un correo electrónico."
+        preference:
+          attributes:
+            telephone:
+              invalid: "Este campo debe ser un número telefónico."
+            telephone2:
+              invalid: "Este campo debe ser un número telefónico."
+            email:
+              invalid: "Este campo debe ser un correo electrónico."

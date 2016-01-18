@@ -1,0 +1,19 @@
+<% s = 'https://coolors.co/app/30374c-3da59b-39db94-6887d8-99efe5' %>
+<% s.sub! 'https://coolors.co/app/', '' %>
+<% a = s.split '-' %>
+<% 5.times do |i| %>
+  <%= "$c#{i+1}: ##{a[i]};" %>
+<% end %>
+
+$success-c: #85C96A;
+$alert-c: #E8A247;
+$warning-c: #F2461F;
+$notice-c: #2A8093;
+
+div.description.code
+{
+  text-align: center;
+  font-size: 3.0em;
+  background-color:red;
+}
+

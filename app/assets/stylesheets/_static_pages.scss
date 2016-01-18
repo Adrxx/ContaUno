@@ -1,0 +1,351 @@
+@mixin main-button-style($color) {
+  text-decoration: none;
+
+  padding: 7px 20px;
+  border: solid 2px $color;
+  color:  $color;
+
+  display: inline-block;
+
+  @include transition-duration(0.3s);
+  @include transition-property(all);
+
+    &:after
+    {
+      display: inline-block;
+      margin-left: 13px;
+      margin-bottom: 0px;
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 0 6px 6px;
+      border-color: transparent transparent transparent $color;
+
+    }
+}
+
+// Colors
+
+$orange-c: #ff8144;
+$green-c: #84b55f;
+$light-green-c: #afe684;
+
+body 
+{
+  background-color: white;
+    color: white;
+
+}
+
+nav.main-nav
+{
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+
+  position:fixed;
+  background-color:white;
+  width: 100%;
+  height: 50px;
+  z-index: 100;
+
+  a
+  {
+    margin: 0 20px;
+    //background-color: blue;
+    text-decoration: none;
+    color: gray;
+  }
+
+  a.current
+  {
+    &:nth-child(1) { color: $orange-c; }
+    &:nth-child(2) { color: green; }
+  }
+
+}
+
+
+//=================================
+//-*****    Landing
+//=================================
+
+.hero-image
+{
+  position:relative;
+  z-index: 20;
+  min-height: 200px;
+  height: 50vh;
+  width: 100%;
+  box-shadow: 0px 1px 20px transparentize(black, 0.5);
+  background-image: image-url('fondo.jpg');
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+
+  .logo 
+  {
+    position: absolute;
+    top:15%;
+    left: 7%;
+    height:80%;
+    width: 400px;
+    background-image: image-url('logo.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    //background-color: red;
+  }
+}
+
+.left-pantallas
+{
+  position: relative;
+  z-index: 1;
+  width:50%;
+  height: 50vh;
+  min-height: 200px;
+  background-color: $orange-c;
+  float: left;
+
+  &:after
+  {
+    content: '';
+    display: block;
+    position: relative;
+    height: 100%;
+    left: 55px;
+    width: 100%;
+    background-color: $orange-c;
+    @include transform(skew(15deg));
+  }
+
+}
+
+.right-comprar
+{
+  position: relative;
+  width:50%;
+  height: 50vh;
+  min-height: 200px;
+  background-color:white;
+  float: left;
+
+  .vertical-center
+  {
+    position: absolute;
+    top: 50%;
+    max-width: 400px;
+    transform: translateY(-50%);
+    //background-color: red;
+    color: gray;
+    left:23%;
+  }
+
+  .title
+  {
+    font-size: 2em;
+    margin-right: 20px;
+  }
+
+  .comprar-button
+  {
+    margin-top: 20px;
+    font-size: 1.1em;
+    @include main-button-style($orange-c);
+  }
+
+}
+
+.download-button
+{
+  position: absolute;
+  top: calc(100% - 50px);
+  right: 12%;
+  display: inline-block;
+  background-color: $orange-c;
+  border-radius: 4px;
+  //border: 1px solid darken($orange-c, 10%);
+  padding: 20px 30px;
+  padding-right: 120px;
+  box-shadow: 0px 1px 10px transparentize(black, 0.6);
+  @include transition-duration(0.5s);
+  @include transition-property(background-color);
+
+  &:hover
+  {
+    background-color: darken($orange-c, 10%);
+  }
+
+  &:after
+  {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    right: 20px;
+    top: 6px;
+    background-image: image-url('download.png');
+    background-position: center;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+  }
+
+  .title
+  {
+    font-size: 1.6em;
+    color: white;
+    font-weight: 600;
+  }
+
+
+  .subtitle
+  {
+    font-size: 1.1em;
+    color: white;
+  }
+  
+
+}
+
+
+//=================================
+//-*****    Tareas
+//=================================
+
+
+.background-tareas
+{
+  position: fixed;
+  z-index: -100;
+  height: 100vh;
+  width: 100%;
+  background-image: image-url('fondo.jpg');
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+
+   &:after
+   {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: transparentize($green-c, 0.2);
+   }
+}
+
+.tareas
+{
+  padding-top: 80px;
+
+  h1 
+  {
+     font-size: 2em;
+     text-align: center;
+     margin-bottom: 1em;
+  }
+
+  h2 
+  {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  hr 
+  {
+    border-top: 1px solid $light-green-c;
+  }
+
+
+
+  .error-message 
+  {
+    text-align: center;
+    color: transparentize(black, 0.3);
+    background-color: transparentize($orange-c, 0.2);
+    border:solid 1px $orange-c;
+    border-top: none;
+    padding: 2px;
+    margin-top: -14px;
+    margin-bottom:10px;
+  }
+
+  .code-field
+  {
+    @include appearance(none);
+    width: 100%;
+
+    padding: 35px 20px;
+
+    text-transform: uppercase;
+    font-size: 1.9em;
+    font-weight: 600;
+    border: 4px solid transparentize($green-c, 0.8);
+    text-align: center;
+
+    background-color: transparentize($light-green-c, 0.0);
+    border: 1px solid transparentize($green-c, 0.8);
+
+    font-family: "Lato", sans-serif;
+    margin-bottom: 15px;
+    color: darken($green-c,20%);
+
+  }
+
+  .data-field
+  {
+    @include appearance(none);
+    width: 100%;
+
+    border: 4px solid transparentize($green-c, 0.8);
+
+    background-color: transparentize($light-green-c, 0.0);
+    border: 1px solid transparentize($green-c, 0.8);
+
+    font-family: "Lato", sans-serif;
+    margin-bottom: 15px;
+    color: darken($green-c,20%);
+
+  }
+
+}
+
+.file-section
+{
+  position:relative;
+}
+
+.file-text
+{
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  text-align: center;
+  padding-top:30px;
+  color: $green-c;
+  background-color: transparentize($light-green-c,0.0);
+  border-radius: 4px;
+
+}
+.mnt-pm-file-input
+{
+  position:relative;
+  cursor:pointer;
+  display: block;
+  width: 100%;
+  z-index: 2000;
+  opacity: 0.8;
+  overflow: hidden;
+  padding-left: calc(50% - 90px);
+
+
+  //font-size:10000px;
+}
+
+
+
+

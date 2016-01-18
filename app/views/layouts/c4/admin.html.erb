@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <%= stylesheet_link_tag 'c4/admin', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'c4/c4', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<% flash.each_with_index do |(key, value),i| %>
+  <%= content_tag :div, class: "c4-flash #{key} animated slideInUp", style:"padding-bottom:#{i*50}px;z-index:#{1000-i};" do %>
+    <div><%= value %></div>
+  <% end %>
+<% end %>
+
+
+  <%#= color_palette() %>
+  <% if user_signed_in? #NAV BAR %>
+    <%= link_to c4.root_path , class: 'c4-home-button' do %>
+      ContaUno
+    <% end %>
+    <div class="c4-menu-button">
+      <span class="icon-menu"></span>
+    </div>
+
+    <div class="c4-nav">
+      <div class="spacer"></div>
+      <%= render '/c4/navlinks' %>
+    </div>
+  <% end %>
+
+  <div class="overlay"></div>
+  <% if user_signed_in? #NAV BAR %>
+    <div class="c4-header">
+      <%= yield(:header_content) %>
+    </div>
+  <% end %>
+
+  <div class="container <%= "animated fadeIn" if flash.empty? %>">
+    <%= yield %>
+  </div>
+
+</body>
+</html> 
+

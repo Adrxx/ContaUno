@@ -1,0 +1,51 @@
+<%= content_for :selected, "T" %>
+<div class="background-tareas"></div>
+<% flash.each_with_index do |(key, value),i| %>
+  <%= content_tag :div, class: "c4-flash #{key} animated slideInUp" do %>
+    <div><%= value %></div>
+  <% end %>
+<% end %>
+
+<div class="container tareas">
+<h1>Sube tu tarea:</h1>
+
+
+<%= form_for(@homework_upload ,:url => tareas_path ) do |f| %>
+
+<h2>Ingresa el código que te proporcionó tu profesor:</h2>
+
+  <div class="row">
+    <div class="offset-by-four four columns">
+      <%= full_field_code(f,:code,'') %>
+    </div>
+  </div>
+<br>
+  <div class="row">
+    <div class="offset-by-two eight columns">
+      <%= full_field(f,:name, 'Nombre' ,'') %>
+    </div>
+  </div>
+<br>
+  <div class="row">
+    <div class="offset-by-two eight columns">
+      <%= full_field(f,:email, 'Correo electrónico' ,'') %>
+    </div>
+  </div>
+<br>
+<div class="row">
+  <div class="offset-by-two eight columns file-section">
+    <%= full_file_field f, :homework %>
+  </div>
+</div>
+<div class="row">
+  <div class="offset-by-two eight columns">
+  <hr>
+    <%= f.submit "Enviar", class: 'c4-button-success u-full-width' %>
+  </div>
+</div>
+
+
+<% end %>
+
+</div>
+

@@ -1,0 +1,61 @@
+<%# Form fields %>
+<%= form_for(@user, :html => { :multipart => true }) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error-explanation-header">
+      <%= pluralize(@user.errors.count, "error impidió", "errores impidieron") %> que se guardaran los cambios.
+    </div>
+<% end %>
+
+
+<div class="row">
+  <%= full_password_field(f,:auth_password,'Contraseña de autorización ( Tu contraseña actual )','') %>
+</div>
+<hr>
+<% if @user.new_record? %>
+  <% content_for :header_content do %>
+    <h1><b>Nuevo usuario</b></h1>
+  <% end %>
+  <div class="row">
+    <%= full_field(f,:email,'Correo de usuario' ,'ejemplo@ejemplo.com') %>
+  </div>
+<% else %>
+  <% content_for :header_content do %>
+    <h1><b>Editar contraseña de:</b> <%= @user.email %> </h1>
+  <% end %>
+<% end %>
+
+
+<div class="row">
+  <div class="six columns">
+    <%= full_password_field(f,:password,'Contraseña','') %>
+  </div>
+  <div class="six columns">
+    <%= full_password_field(f,:password_confirmation,'Confirmar contraseña','') %>
+  </div>
+</div>
+
+  <% if current_user.role == "admin" %>
+
+<div class="row">
+  <%= f.label(:role, 'Privilegios') %>
+  <%= f.select :role, [['Profesor','capturist'],['Administrador','admin']],{ include_blank: false}, {:class => 'u-full-width'} %>
+</div>
+<hr>
+
+<div class="row">
+    <div class="six columns">
+      <%= link_to "Salir sin guardar", users_path, class: 'c4-button-secondary u-full-width'  %>
+    </div>
+    <div class="six columns">
+      <%= f.submit "Guardar", class: 'c4-button-primary u-full-width' %>
+    </div>
+  <% else %>
+    <div class="twelve columns">
+      <%= f.submit "Guardar", class: 'c4-button-primary u-full-width' %>
+    </div>
+</div>
+
+
+  <% end %>
+
+<% end %>

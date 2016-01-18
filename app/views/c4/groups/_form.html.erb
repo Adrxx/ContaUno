@@ -1,0 +1,26 @@
+<%# Form fields %>
+<%= form_for(@group,  :url => (@group.new_record? ? main_app.groups_path : main_app.group_path(@group.id)), :html => { :multipart => true }) do |f| %>
+  <% if @group.errors.any? %>
+    <div class="error-explanation-header">
+      <%= pluralize(@group.errors.count, "error impidió", "errores impidieron") %> que se guardaran los cambios.
+    </div>
+<% end %>
+
+<%# Name %>
+<div class="row">
+  
+    <%= full_field(f,:name, 'Name' ,'Name...') %>
+  
+</div>
+<hr>
+<div class="row">
+  <div class="six columns">
+    <%= link_to "Salir sin guardar", main_app.groups_path, class: 'c4-button-secondary u-full-width'  %>
+  </div>
+
+  <div class="six columns">
+    <%= f.submit "Guardar", class: 'c4-button-primary u-full-width' %>
+  </div>
+</div>
+
+<% end %>

@@ -1,0 +1,42 @@
+<% if current_user.role == "admin" %>
+  <%= link_to main_app.contact_path, class: 'c4-grid-cell' do %>
+          <div class='centered'>
+            <span class='icon-email'></span>
+            <span class='name'>Contacto</span>
+            <span class='description'>Edita los datos de contacto.</span>
+          </div>
+    <% end %>
+  <%= link_to c4.users_path, class: 'c4-grid-cell' do %>
+    <div class="centered">
+      <span class="icon-users"></span>
+      <span class="name">Usuarios</span>
+      <span class="description">Administra las cuentas del sistema.</span>
+    </div>
+  <% end %>
+
+<% else %>
+
+<%= link_to main_app.groups_path, class: 'c4-grid-cell' do %>
+  <div class='centered'>
+    <span class='icon-check_box'></span>
+    <span class='name'>Tareas y grupos</span>
+    <span class='description'>Administra tus grupos y revisa tareas.</span>
+  </div>
+<% end %>
+
+<%= link_to c4.edit_user_path(current_user), class: 'c4-grid-cell' do %>
+    <div class="centered">
+      <span class="icon-users"></span>
+      <span class="name">Usuario</span>
+      <span class="description">Edita tu cuenta.</span>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to c4.destroy_user_session_path, :method => :delete, class: 'c4-grid-cell -nav-only' do %>
+  <div class="centered">
+    <span class="icon-upload"></span>
+    <span class="name">Salir</span>
+    <span class="description">Cierra la sesión actual.</span>
+  </div>
+<% end %>
