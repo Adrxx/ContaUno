@@ -1,0 +1,44 @@
+<%= content_for :title, "Grupo: " + @group.name %>
+
+<% content_for :header_content do %>
+<h1><strong>Grupo: <%= @group.name %> </strong></h1>
+<% end %>
+<div class="c4-list-collection">
+<% if @group.homework_uploads.empty? %>
+  <div class="no-content">
+    <span class="icon-error"></span>
+    <div>Sin contenido</div>
+  </div>
+<% end %>
+<% @group.homework_uploads.each do | h | %>
+ <div class="c4-list-cell">
+    <div class="row top-row">
+      <div class="seven columns">
+        <div class="title">
+          <%= h.name %>
+        </div>
+      </div>
+      <div class="five columns">
+        <div class="date">
+          <%= h.created_at.strftime('%d/%m/%Y a las %H:%M') %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <div class="row">
+          <div class="seven columns">
+            <strong><%= h.email %></strong>
+          </div>
+          <div class="five columns buttons-container">
+            <%= link_to main_app.feedback_path(2), class:'c4-button-alert text-only' do %>
+               Retroalimentar
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

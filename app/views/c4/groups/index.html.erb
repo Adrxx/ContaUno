@@ -1,4 +1,4 @@
-<%= content_for :title, "Groups" %>
+<%= content_for :title, "Grupos" %>
 
 <% content_for :header_content do %>
 <h1><strong>Grupos</strong></h1>
@@ -35,10 +35,14 @@
       </div>
       -->
       <div class="twelve columns">
-        <div class="description code">
-          Código: <%= group.code %>
+        <div class="row">
+          Código: <strong><%= group.code %></strong>
         </div>
+        <br>
         <div class="row buttons-container">
+        <%= link_to main_app.group_path(group), class:'c4-button-alert' do %>
+          <span class="icon-visibility"></span>
+        <% end %>
         <%= link_to main_app.edit_group_path(group), class:'c4-button-primary' do %>
           <span class="icon-edit"></span>
         <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118083630) do
+ActiveRecord::Schema.define(version: 20160125091333) do
 
   create_table "c4_preferences", force: :cascade do |t|
     t.text   "values",     default: "[]"
@@ -47,7 +47,10 @@ ActiveRecord::Schema.define(version: 20160118083630) do
     t.string   "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "teacher_id"
   end
+
+  add_index "groups", ["teacher_id"], name: "index_groups_on_teacher_id"
 
   create_table "homework_uploads", force: :cascade do |t|
     t.string   "code"
@@ -59,6 +62,9 @@ ActiveRecord::Schema.define(version: 20160118083630) do
     t.string   "homework_content_type"
     t.integer  "homework_file_size"
     t.datetime "homework_updated_at"
+    t.integer  "group_id"
   end
+
+  add_index "homework_uploads", ["group_id"], name: "index_homework_uploads_on_group_id"
 
 end

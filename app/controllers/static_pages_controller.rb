@@ -12,6 +12,12 @@ class StaticPagesController < ApplicationController
     #byebug
     respond_to do |format|
       if @homework_upload.save
+        group = Group.find_by_code(@homework_upload.code)
+        group.homework_uploads << @homework_upload
+        #byebug
+
+        group.save
+
         format.html { redirect_to tareas_path(@homework_upload), notice: 'Se ha subido su tarea con éxito.' }
       else
         format.html { render :tareas }

@@ -7,6 +7,7 @@ module C4
 
     def index
       @groups = Group.all
+      @groups = @groups.select { |g| g.teacher_id == current_user.id }
     end
 
     def new
@@ -16,12 +17,23 @@ module C4
     def edit
     end
 
+    def feedback
+      @group = Group.find(params[:homework_id])
+
+    end
+
+    def show
+
+    end
+
+
     def create
       @group = Group.new(group_params)
       begin
         @unique_code = SecureRandom.urlsafe_base64(4).gsub(/[-_]/, '-' => 1, '_' => 'A').upcase
       end while (not Group.find_by_code(@unique_code).blank?)
 
+      @group.teacher_id = current_user.id
       @group.code = @unique_code
 
       if @group.save
@@ -53,7 +65,12 @@ module C4
       # Use callbacks to share common setup or constraints between actions.
       def set_group
         @group = Group.find(params[:id])
+        if @group.teacher_id != current_user.id
+          redirect_to main_app.groups_url
+        end
       end
+
+
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def group_params

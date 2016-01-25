@@ -2,10 +2,13 @@
 class DeviseCreateC4Users < ActiveRecord::Migration
   def change
     create_table(:c4_users) do |t|
+      ## Custom stuff
+      
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.integer :role, default: 0
+
 
 
       ## Recoverable

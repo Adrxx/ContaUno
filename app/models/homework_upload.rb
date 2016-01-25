@@ -1,5 +1,8 @@
 class HomeworkUpload < ActiveRecord::Base
 
+
+  belongs_to :group
+
   has_attached_file :homework, { url: "/system/:hash.:extension", hash_secret: "12c289abd0c4849a770423b606614762f389ce12c10e9daa5494932a832419154866fde907d16204c915a29e683840eb9cec63936bcaf54963ae671f772dcd58" }
 
   #validates_attachment_content_type :homework, content_type: /\Aapplication\/octet-stream\Z/

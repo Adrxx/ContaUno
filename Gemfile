@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
 
-gem 'c4', '0.0.7', :git => 'https://github.com/Adrxx/C4.git'
+gem 'c4', '0.0.8', :git => 'https://github.com/Adrxx/C4.git'
+gem 'mail_form'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 gem 'paperclip','4.3.2'
