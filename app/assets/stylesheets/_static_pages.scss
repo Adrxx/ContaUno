@@ -28,6 +28,7 @@
 // Colors
 
 $orange-c: #ff8144;
+$blue-c: #729CD3;
 $green-c: #84b55f;
 $light-green-c: #afe684;
 
@@ -62,6 +63,8 @@ nav.main-nav
   {
     &:nth-child(1) { color: $orange-c; }
     &:nth-child(2) { color: green; }
+    &:nth-child(3) { color: $blue-c; }
+    &:nth-child(4) { color: green; }
   }
 
 }
@@ -346,6 +349,112 @@ nav.main-nav
 
   //font-size:10000px;
 }
+
+
+//=================================
+//-*****    Contacto
+//=================================
+
+
+.background-contacto
+{
+  position: fixed;
+  z-index: -100;
+  height: 100vh;
+  width: 100%;
+  background-image: image-url('fondo.jpg');
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+
+   &:after
+   {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background-color: transparentize($blue-c, 0.2);
+   }
+}
+
+.tareas
+{
+  padding-top: 80px;
+
+  h1 
+  {
+     font-size: 2em;
+     text-align: center;
+     margin-bottom: 1em;
+  }
+
+  h2 
+  {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  hr 
+  {
+    border-top: 1px solid $light-green-c;
+  }
+
+
+
+  .error-message 
+  {
+    text-align: center;
+    color: transparentize(black, 0.3);
+    background-color: transparentize($orange-c, 0.2);
+    border:solid 1px $orange-c;
+    border-top: none;
+    padding: 2px;
+    margin-top: -14px;
+    margin-bottom:10px;
+  }
+
+  .code-field
+  {
+    @include appearance(none);
+    width: 100%;
+
+    padding: 35px 20px;
+
+    text-transform: uppercase;
+    font-size: 1.9em;
+    font-weight: 600;
+    border: 4px solid transparentize($green-c, 0.8);
+    text-align: center;
+
+    background-color: transparentize($light-green-c, 0.0);
+    border: 1px solid transparentize($green-c, 0.8);
+
+    font-family: "Lato", sans-serif;
+    margin-bottom: 15px;
+    color: darken($green-c,20%);
+
+  }
+
+  .data-field
+  {
+    @include appearance(none);
+    width: 100%;
+
+    border: 4px solid transparentize($green-c, 0.8);
+    text-align: center;
+
+    background-color: transparentize($light-green-c, 0.0);
+    border: 1px solid transparentize($green-c, 0.8);
+
+    font-family: "Lato", sans-serif;
+    margin-bottom: 15px;
+    color: darken($green-c,20%);
+
+  }
+
+}
+
 
 
 

@@ -13,7 +13,8 @@
 
   <%= link_to 'Licencia', root_path, class: "#{selectable_link( yield(:selected), 'L' )}" %>
   <%= link_to 'Tareas', tareas_path, class: "#{selectable_link( yield(:selected), 'T' )}" %>
-  <%= link_to 'Contacto', root_path, class: "#{selectable_link( yield(:selected), 'C' )}" %>
+  <%= link_to 'Contacto', contacto_path, class: "#{selectable_link( yield(:selected), 'C' )}" %>
+  <%= link_to 'Profesores', profesor_path, class: "#{selectable_link( yield(:selected), '' )}" %>
   <%#= link_to 'Profesores', root_path %>
 </nav>
 

@@ -7,6 +7,10 @@ class StaticPagesController < ApplicationController
     @homework_upload = HomeworkUpload.new
   end
 
+  def contacto
+    @prefs = C4::Preference.first
+  end
+  
   def create_tareas
     @homework_upload = HomeworkUpload.new(homework_upload_params)
     #byebug

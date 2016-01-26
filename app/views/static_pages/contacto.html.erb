@@ -1,0 +1,53 @@
+<%= content_for :selected, "C" %>
+<div class="background-contacto"></div>
+
+<div class="container tareas">
+<h1>Contacto:</h1>
+
+<% if @prefs.youtube.present? %>
+<h5 class="row">
+  <strong>Youtube</strong> : <%= @prefs.youtube %>
+</h5>
+<% end %>
+
+<% if @prefs.facebook.present? %>
+<h5 class="row">
+  <strong>Facebook</strong> : <%= @prefs.facebook %>
+</h5>
+<% end %>
+
+<% if @prefs.twitter.present? %>
+<h5 class="row">
+  <strong>Twitter</strong> : <%= @prefs.twitter %>
+</h5>
+<% end %>
+
+<% if @prefs.email.present? %>
+<h5 class="row">
+  <strong>E-mail</strong> : <%= @prefs.email %>
+</h5>
+<% end %>
+
+<% if @prefs.telephone.present? %>
+<h5 class="row">
+  <strong>Teléfono</strong> : <%= @prefs.telephone %>
+</h5>
+<% end %>
+
+<% if @prefs.telephone2.present? %>
+<h5 class="row">
+  <strong>Teléfono 2:</strong> : <%= @prefs.telephone2 %>
+</h5>
+<% end %>
+
+<div class="row">
+ <ul>
+  <% @prefs.values.each_with_index do |val,i| %>
+  <li> <%= val["key"] %> : <%= val["value"] %> </li>
+  <% end %>
+  </ul>
+</div>
+
+
+</div>
+
