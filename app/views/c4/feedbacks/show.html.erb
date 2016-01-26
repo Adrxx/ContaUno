@@ -1,0 +1,23 @@
+<%= content_for :title, "Retroalimentar" %>
+
+<% content_for :header_content do %>
+<h1>Tarea de: <strong> <%= @homework.name %></strong></h1>
+<% end %>
+
+<h2>Retroalimentación:</h2>
+<%= form_for @feedback, :url => main_app.group_feedback_path(@group,@homework), :method => :post, :html => { :multipart => true } do |f| %>
+  <%= full_text_area f, :message, "Mensaje", "" %>
+  <hr>
+
+  <h3>Imágenes de ayuda (3 máximo):</h3>
+  <%= f.file_field :screenshot1 %>
+  <br>
+  <%= f.file_field :screenshot2 %>
+  <br>
+  <%= f.file_field :screenshot3 %>
+  <br>
+
+  <hr>
+  <%= f.hidden_field :nickname %>
+  <%= f.button :Enviar, class: 'c4-button-alert text-only' %>
+<% end %>

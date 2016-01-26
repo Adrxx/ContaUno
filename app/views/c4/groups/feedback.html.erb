@@ -1,9 +1,0 @@
-<%= form_for @feedback, :url => enviar_contacto_path, :method => :post, remote: true do |f| %>
-  <%= full_field_qb f, :name, "Nombre" %>
-  <%= full_field_qb f, :email, "Correo electrónico" %>
-
-  <%= full_text_qb f, :message, "Mensaje" %>
-
-  <%= f.hidden_field :nickname %>
-  <%= f.button :Enviar, class: 'boton' %>
-<% end %>

@@ -29,13 +29,14 @@
         <div class="row">
           <div class="seven columns">
             <strong><%= h.email %></strong>
+            <br>
+            <%= link_to "Descargar tarea", h.homework.url(:original, false) %>
           </div>
           <div class="five columns buttons-container">
-            <%= link_to main_app.feedback_path(2), class:'c4-button-alert text-only' do %>
+            <%= link_to main_app.group_feedback_path(@group,h), class:'c4-button-alert text-only' do %>
                Retroalimentar
             <% end %>
           </div>
-
         </div>
       </div>
     </div>

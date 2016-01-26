@@ -14,7 +14,7 @@ es:
         telephone2: "Teléfono secundario"
     errors:
       models:
-        homework_upload:
+        feedback:
           attributes:
             name:
               blank: "Por favor proporcione su nombre."

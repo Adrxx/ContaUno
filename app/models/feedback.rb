@@ -1,10 +1,9 @@
 class Feedback < MailForm::Base
 
   attr_accessor :send_to
+  attr_accessor :sent_by
 
-  attribute :name,      :validate => true
-
-  attribute :message
+  attribute :message,      :validate => true
   attribute :nickname,  :captcha  => true
 
   attributes :screenshot1, :attachment => true
@@ -18,7 +17,7 @@ class Feedback < MailForm::Base
     {
       :subject => "Retroalimentación Tarea",
       :to => "#{send_to}",
-      :from => %("#{name}")
+      :from => %("#{sent_by}")
     }
   end
 

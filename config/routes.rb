@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 
-  resources :groups, path: 'admin/groups', path_names: { new: 'nuevo', edit: 'editar' }, module: 'c4'
-
-  get '/feedback/:homework_id/' => 'static_pages#feedback', as: 'feedback'
+  resources :groups, path: 'admin/groups', path_names: { new: 'nuevo', edit: 'editar' }, module: 'c4' do
+    resource :feedback, only: [:show, :update, :create]
+  end
   
   root 'static_pages#landing'
   get '/tareas' => 'static_pages#tareas', as: 'tareas'
