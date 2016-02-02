@@ -1,0 +1,47 @@
+<div class="c4-contact-data">
+  <h1 class=''>Contacto</h1>
+  <% @prefs = C4::Preference.first %>
+
+  <% if @prefs.facebook.present? %>
+    <div class="data-title">Facebook:</div>
+    <ul class="data-list">
+      <li><a href="<%= @prefs.facebook %>"><%= @prefs.facebook %></a></li>
+    </ul>
+  <% end %>
+
+  <% if @prefs.twitter.present? %>
+    <div class="data-title">Twitter:</div>
+    <ul class="data-list">
+      <li><a href="<%= @prefs.twitter %>"><%= @prefs.twitter %></a></li>
+    </ul>
+  <% end %>
+
+  <% if @prefs.email.present? %>
+    <div class="data-title">Correo electrónico:</div>
+    <ul class="data-list">
+      <li><a href="mailto:<%= @prefs.email %>?Subject=Batukeira" target="_top" class="email"><%= @prefs.email %></a></li>
+    </ul>
+  <% end %>
+
+  <% if @prefs.telephone.present? || @prefs.telephone2.present? %>
+    <div class="data-title">Teléfono:</div>
+    <ul class="data-list">
+     <% if @prefs.telephone.present? %>
+      <li><a href="tel:<%= @prefs.telephone %>" class="telefono"><%= @prefs.telephone %></a></li>
+     <% end %>
+    <% if @prefs.telephone2.present? %>
+      <li><a href="tel:<%= @prefs.telephone2 %>" class="telefono"><%= @prefs.telephone2 %></a></li>
+     <% end %>
+    </ul>
+  <% end %>
+
+  <% @prefs.values.each_with_index do |val,i| %>
+   <div class="data-title">
+     <%= val["key"] %> 
+   </div>
+   <ul class="data-list">
+    <li> <%= val["value"] %></li>
+    </ul>
+  <% end %>
+
+</div>

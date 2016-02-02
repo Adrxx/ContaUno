@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def contacto
-    @prefs = C4::Preference.first
+
   end
   
   def create_tareas

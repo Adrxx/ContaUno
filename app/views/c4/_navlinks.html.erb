@@ -1,4 +1,10 @@
-<% if current_user.role == "admin" %>
+<%= link_to main_app.contact_path, class: 'c4-grid-cell' do %>
+        <div class='centered'>
+          <span class='icon-email'></span>
+          <span class='name'>Contacto</span>
+          <span class='description'>Edita los datos de contacto.</span>
+        </div>
+      <% end %><% if current_user.role == "admin" %>
   <%= link_to main_app.contact_path, class: 'c4-grid-cell' do %>
           <div class='centered'>
             <span class='icon-email'></span>

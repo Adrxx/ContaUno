@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require c4/c4
 //= require_tree .

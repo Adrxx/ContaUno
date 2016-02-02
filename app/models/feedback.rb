@@ -4,6 +4,8 @@ class Feedback < MailForm::Base
   attr_accessor :sent_by
 
   attribute :message,      :validate => true
+  attribute :grade,      :validate => true
+  
   attribute :nickname,  :captcha  => true
 
   attributes :screenshot1, :attachment => true

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   resources :groups, path: 'admin/groups', path_names: { new: 'nuevo', edit: 'editar' }, module: 'c4' do
     resource :feedback, only: [:show, :update, :create]
   end
@@ -8,7 +7,6 @@ Rails.application.routes.draw do
   root 'static_pages#landing'
   get '/contacto' => 'static_pages#contacto', as: 'contacto'
   get '/profesores' =>  redirect('/admin'), as: 'profesor'
-
 
   get '/tareas' => 'static_pages#tareas', as: 'tareas'
   post '/tareas' => 'static_pages#create_tareas'

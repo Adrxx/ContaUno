@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 
-gem 'c4', '0.0.8', :git => 'https://github.com/Adrxx/C4.git'
+gem 'c4', '0.1.0', :git => 'https://github.com/Adrxx/C4.git'
 gem 'mail_form'
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
