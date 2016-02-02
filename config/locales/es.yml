@@ -14,7 +14,7 @@ es:
         telephone2: "Teléfono secundario"
     errors:
       models:
-        c4/contact:
+        feedback:
           attributes:
             name:
               blank: "Por favor proporcione su nombre."
@@ -23,6 +23,15 @@ es:
               invalid: "El correo electrónico no es válido."
             message:
               blank: "El mensaje no puede estar vacío."
+        c4/contact:
+          attributes:
+            name:
+              blank: "Por favor proporcione su nombre."
+            email:
+              blank: "Por favor proporcione un correo electrónico."
+              invalid: "El correo electrónico no es válido."
+            telephone:
+              blank: "Por favor proporcione un teléfono."
   devise:
     sessions:
       user:

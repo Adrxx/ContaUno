@@ -9,8 +9,8 @@ module C4
     # in ActionMailer accepts.
     def headers
       {
-        :subject => "ASUNTO!",
-        :to => "example@example.com",
+        :subject => "Contacto contauno.com",
+        :to => "contacto@contauno.com",
         :from => %("#{name}" <#{email}>)
       }
     end
