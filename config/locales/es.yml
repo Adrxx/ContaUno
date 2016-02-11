@@ -23,6 +23,8 @@ es:
               invalid: "El correo electrónico no es válido."
             message:
               blank: "El mensaje no puede estar vacío."
+            grade:
+              blank: "Por favor proporcione una calificación."
         c4/contact:
           attributes:
             name:
@@ -30,8 +32,8 @@ es:
             email:
               blank: "Por favor proporcione un correo electrónico."
               invalid: "El correo electrónico no es válido."
-            telephone:
-              blank: "Por favor proporcione un teléfono."
+            message:
+              blank: "El mensaje no puede estar vacío."
   devise:
     sessions:
       user:

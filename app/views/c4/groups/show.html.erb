@@ -25,18 +25,20 @@
       </div>
     </div>
     <div class="row">
+      <div class="four columns">
+        <strong><%= h.email %></strong>
+      </div>
+    </div>
+    <br>
+    <div class="row">
       <div class="twelve columns">
-        <div class="row">
-          <div class="seven columns">
-            <strong><%= h.email %></strong>
-            <br>
-            <%= link_to "Descargar tarea", h.homework.url(:original, false) %>
-          </div>
-          <div class="five columns buttons-container">
+        <div class="row buttons-container">
+            <%= link_to h.homework.url(:original, false), class:'c4-button-alert text-only' do %>
+               Descargar tarea
+            <% end %>
             <%= link_to main_app.group_feedback_path(@group,h), class:'c4-button-alert text-only' do %>
                Retroalimentar
             <% end %>
-          </div>
         </div>
       </div>
     </div>

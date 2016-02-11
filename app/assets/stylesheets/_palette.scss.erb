@@ -9,3 +9,81 @@ $success-c: #85C96A;
 $alert-c: #E8A247;
 $warning-c: #F2461F;
 $notice-c: #2A8093;
+
+
+.c4-contact-mailer
+{
+  .send-button
+  {
+    text-decoration: none;
+    width: 100%;
+    padding: 7px 20px;
+    border: solid 2px $c1;
+    background-color: white;
+
+    display: inline-block;
+
+    @include transition-duration(0.3s);
+    @include transition-property(all);
+
+      &:after
+      {
+        display: inline-block;
+        margin-left: 13px;
+        margin-bottom: 0px;
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 0 6px 6px;
+        border-color: transparent transparent transparent $c1;
+
+      }
+    }
+  }
+
+  .c4-contact-data
+{
+  
+  padding: 80px 40px;
+  height: auto;
+  min-height: 600px;
+  //background-color: red;
+  float: left;
+  width: 100%;
+
+  @include desktop-hd
+  {
+    //height: 100vh;
+    width: calc( 100% - 400px );
+      padding-bottom: 0px;
+
+  }
+
+  .data-title
+  {
+    color: white;
+    font-size: 1.2em;
+    @include tablet
+    {
+      padding-left: 25px;
+    }
+
+  }
+
+  .data-list
+  {
+    color: white;
+    @include tablet
+    {
+      padding-left: 50px;
+    }
+
+    a
+    {
+      text-decoration: underline;
+      color: $c1;
+    }
+  }
+
+}

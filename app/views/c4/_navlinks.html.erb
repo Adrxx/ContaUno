@@ -1,10 +1,4 @@
-<%= link_to main_app.contact_path, class: 'c4-grid-cell' do %>
-        <div class='centered'>
-          <span class='icon-email'></span>
-          <span class='name'>Contacto</span>
-          <span class='description'>Edita los datos de contacto.</span>
-        </div>
-      <% end %><% if current_user.role == "admin" %>
+<% if current_user.role == "admin" %>
   <%= link_to main_app.contact_path, class: 'c4-grid-cell' do %>
           <div class='centered'>
             <span class='icon-email'></span>
@@ -19,8 +13,8 @@
       <span class="description">Administra las cuentas del sistema.</span>
     </div>
   <% end %>
-
 <% else %>
+
 
 <%= link_to main_app.groups_path, class: 'c4-grid-cell' do %>
   <div class='centered'>
@@ -37,6 +31,14 @@
       <span class="description">Edita tu cuenta.</span>
     </div>
   <% end %>
+<% end %>
+
+<%= link_to "/CalificadorProfesores.zip", class: 'c4-grid-cell' do %>
+  <div class='centered'>
+    <span class='icon-download'></span>
+    <span class='name'>Descargar Calificador</span>
+    <span class='description'>Descarga el programa calificador para profesores.</span>
+  </div>
 <% end %>
 
 <%= link_to c4.destroy_user_session_path, :method => :delete, class: 'c4-grid-cell -nav-only' do %>

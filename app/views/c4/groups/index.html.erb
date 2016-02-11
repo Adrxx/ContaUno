@@ -38,6 +38,9 @@
         <div class="row">
           Código: <strong><%= group.code %></strong>
         </div>
+        <div class="row">
+          Tareas Registradas: <strong><%= group.homework_uploads.count %></strong>
+        </div>
         <br>
         <div class="row buttons-container">
         <%= link_to main_app.group_path(group), class:'c4-button-secondary' do %>

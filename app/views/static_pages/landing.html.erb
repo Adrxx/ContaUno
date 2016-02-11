@@ -1,4 +1,9 @@
 <%= content_for :selected, "L" %>
+<% flash.each_with_index do |(key, value),i| %>
+  <%= content_tag :div, class: "c4-flash #{key} animated slideInUp", style:"padding-bottom:#{i*50}px;z-index:#{1000-i};" do %>
+    <div><%= value %></div>
+  <% end %>
+<% end %>
 
 <div class="hero-image">
   <div class="logo"></div>
@@ -13,6 +18,7 @@
 <div class="right-comprar">
   <div class="vertical-center">
     <div class="title">Compra tu licencia para poder usar el software.</div>
-    <div class="comprar-button">Comprar ahora</div>
+    <%= link_to 'Comprar ahora', pagos_path, class: "comprar-button" %>
+
   </div>
 </div>

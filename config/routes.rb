@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   
   root 'static_pages#landing'
   get '/contacto' => 'static_pages#contacto', as: 'contacto'
+  get '/pagos' => 'static_pages#pagos', as: 'pagos'
+  get '/compra-exitosa' => 'static_pages#pago_exitoso', as: 'pago_exitoso'
   get '/profesores' =>  redirect('/admin'), as: 'profesor'
 
   get '/tareas' => 'static_pages#tareas', as: 'tareas'

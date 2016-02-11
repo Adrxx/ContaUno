@@ -10,6 +10,11 @@ class StaticPagesController < ApplicationController
   def contacto
 
   end
+
+  def pago_exitoso
+    flash[:success] = '¡Tu pago ha sido completado exitosamente!'
+    redirect_to root_path
+  end
   
   def create_tareas
     @homework_upload = HomeworkUpload.new(homework_upload_params)
