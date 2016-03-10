@@ -13,8 +13,8 @@ module ApplicationHelper
     str += form.label(name, title)
     str += form.text_field(name, class: 'data-field u-full-width', placeholder: placeholder)
     str += error_if_exists(form.object,name)
-    str.html_safe      
-  end  
+    str.html_safe
+  end
 
   def full_file_field(form,name)
     str = ''
@@ -43,7 +43,7 @@ module ApplicationHelper
     str += form.label(name, title)
     str += form.text_area(name, class: 'u-full-width', placeholder: placeholder)
     str += error_if_exists(form.object,name)
-    str.html_safe      
+    str.html_safe
   end
 
   def full_numeric_field(form,name,title,placeholder)

@@ -32,7 +32,7 @@ $blue-c: #729CD3;
 $green-c: #84b55f;
 $light-green-c: #afe684;
 
-body 
+body
 {
   background-color: white;
     color: white;
@@ -94,7 +94,7 @@ nav.main-nav
   background-position: center;
   background-size: cover;
 
-  .logo 
+  .logo
   {
     position: relative;
     height:200px;
@@ -134,7 +134,7 @@ nav.main-nav
     width:50%;
   }
 
-  .screens 
+  .screens
   {
     position: absolute;
     transform: translateY(-50%);
@@ -248,6 +248,7 @@ nav.main-nav
 .download-button
 {
   @include user-select(none);
+  text-decoration: none;
   //display: none;
   position: absolute;
   right: calc(50% - 136px);
@@ -306,7 +307,7 @@ nav.main-nav
     font-size: 1.1em;
     color: white;
   }
-  
+
 
 }
 
@@ -342,27 +343,27 @@ nav.main-nav
 {
   padding-top: 80px;
 
-  h1 
+  h1
   {
      font-size: 2em;
      text-align: center;
      margin-bottom: 1em;
   }
 
-  h2 
+  h2
   {
     font-size: 1.3em;
     text-align: center;
   }
 
-  hr 
+  hr
   {
     border-top: 1px solid $light-green-c;
   }
 
 
 
-  .error-message 
+  .error-message
   {
     text-align: center;
     color: transparentize(black, 0.3);
@@ -479,27 +480,27 @@ nav.main-nav
 {
   padding-top: 80px;
 
-  h1 
+  h1
   {
      font-size: 2em;
      text-align: center;
      margin-bottom: 1em;
   }
 
-  h2 
+  h2
   {
     font-size: 1.3em;
     text-align: center;
   }
 
-  hr 
+  hr
   {
     border-top: 1px solid $light-green-c;
   }
 
 
 
-  .error-message 
+  .error-message
   {
     text-align: center;
     color: transparentize(black, 0.3);
@@ -580,9 +581,9 @@ nav.main-nav
    }
 }
 
-.pagos 
+.pagos
 {
-  
+
   .paypal
   {
     width: 100%;
@@ -595,7 +596,7 @@ nav.main-nav
 
   .metodos
   {
-    height: 180px;
+    height: 240px;
     width: 100%;
     background-color:red;
   background-image: image-url('metodos.png');
@@ -625,7 +626,7 @@ nav.main-nav
     color:black;
     background-color: transparentize(black,0.9);
   }
-  
+
   table
   {
     width: 100%;

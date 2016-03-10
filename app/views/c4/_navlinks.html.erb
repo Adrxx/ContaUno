@@ -23,22 +23,21 @@
     <span class='description'>Administra tus grupos y revisa tareas.</span>
   </div>
 <% end %>
-
-<%= link_to c4.edit_user_path(current_user), class: 'c4-grid-cell' do %>
+  <%= link_to c4.edit_user_path(current_user), class: 'c4-grid-cell' do %>
     <div class="centered">
       <span class="icon-users"></span>
       <span class="name">Usuario</span>
       <span class="description">Edita tu cuenta.</span>
     </div>
   <% end %>
-<% end %>
 
-<%= link_to "/CalificadorProfesores.zip", class: 'c4-grid-cell' do %>
-  <div class='centered'>
-    <span class='icon-download'></span>
-    <span class='name'>Descargar Calificador</span>
-    <span class='description'>Descarga el programa calificador para profesores.</span>
-  </div>
+  <%= link_to "#", class: 'c4-grid-cell' do %>
+    <div class='centered'>
+      <span class='icon-download'></span>
+      <span class='name'>Descargar Calificador (Inactivo)</span>
+      <span class='description'>Descarga el programa calificador para profesores.</span>
+    </div>
+  <% end %>
 <% end %>
 
 <%= link_to c4.destroy_user_session_path, :method => :delete, class: 'c4-grid-cell -nav-only' do %>

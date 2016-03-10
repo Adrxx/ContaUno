@@ -6,6 +6,8 @@
 
 # Ignore bundler config.
 /.bundle
+app/public/Instalador.zip
+app/public/CalificadorProfesores.zip
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
