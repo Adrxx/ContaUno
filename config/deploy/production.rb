@@ -4,4 +4,4 @@
   auth_methods: %w(publickey password)
  }
 
-server 'nority.me', user: 'rails', roles: %w{app db web}
+server '104.236.63.125', user: 'rails', roles: %w{app db web}

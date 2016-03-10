@@ -4,4 +4,4 @@
   auth_methods: %w(publickey password)
  }
 
-server 'nority.me', user: 'root', roles: %w{rootr}
+server '104.236.63.125', user: 'root', roles: %w{rootr}
